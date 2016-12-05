@@ -22,6 +22,7 @@ for script in \
   timezone    \
   fstab       \
   kernel      \
+  systemd     \
   grub        \
   $VM_TYPE    \
   network     \

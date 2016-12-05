@@ -1,10 +1,18 @@
 #!/bin/bash -e
 
 chroot /mnt/gentoo /bin/bash -e <<'EOF'
-sed -i 's/^#\s*GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="net.ifnames=0"/' \
-  /etc/default/grub
+echo '# Add by Packer for systemd support' >> /etc/default/grub
+echo 'GRUB_CMDLINE_LINUX="init=/usr/lib/systemd/systemd net.ifnames=0 loglevel=3"' >> /etc/default/grub
 grub2-mkconfig -o /boot/grub/grub.cfg
-ln -s /etc/init.d/net.lo /etc/init.d/net.eth0
-echo 'config_eth0=( "dhcp" )' >> /etc/conf.d/net
-rc-update add net.eth0 default
+cat << 'EOF2' > /etc/systemd/network/eth0.net
+[Match]
+Name=eth0
+
+[Network]
+DHCP=ipv4
+
+[DHCP]
+ClientIdentifier=mac
+EOF2
+systemctl enable systemd-networkd.service
 EOF
