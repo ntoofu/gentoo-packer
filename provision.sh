@@ -25,7 +25,6 @@ for script in \
   grub        \
   $VM_TYPE    \
   network     \
-  vagrant     \
   cleanup
 do
   "$SCRIPTS/scripts/$script.sh"

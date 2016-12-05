@@ -31,6 +31,12 @@
       "iso_checksum_type": "sha512",
       "iso_checksum_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso.DIGESTS",
       "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
+      "keep_registered": true,
+      "remote_type": "esx5",
+      "remote_host": "{{ user `esxi_hostname` }}",
+      "remote_username": "{{ user `esxi_username` }}",
+      "remote_password": "{{ user `esxi_password` }}",
+      "remote_datastore": "{{ user `esxi_datastore` }}",
       "shutdown_command": "shutdown -hP now",
       "ssh_password": "{{user `password`}}",
       "ssh_username": "{{user `username`}}",
@@ -38,16 +44,15 @@
       "type": "vmware-iso",
       "vm_name": "GentooLinux-auto-{{user `stage3`}}",
       "vmx_data": {
-        "memsize": "1024"
+        "cpuid.coresPerSocket": "1",
+        "numvcpus": "2",
+        "memsize": "1024",
+        "ethernet0.networkName": "{{user `vm_network`}}"
       }
     }
   ],
   "description": "Faithful Stage 3 Gentoo Installation (VMWare)",
   "post-processors": [
-    {
-      "output": "gentoo-amd64-stage3-vmware.box",
-      "type": "vagrant"
-    }
   ],
   "provisioners": [
     {
@@ -70,7 +75,13 @@
   "variables": {
     "password": "packer",
     "stage3": "20161201",
-    "username": "root"
+    "username": "root",
+    "esxi_datastore": "datastore1",
+    "esxi_hostname": "esxi",
+    "esxi_username": "root",
+    "esxi_password": "PASSWORD",
+    "time_zone": "Asia/Tokyo",
+    "vm_network": "VM Network"
   }
 }
 
