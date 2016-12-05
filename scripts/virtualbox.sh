@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -e <<'EOF'
 emerge "=virtual/linux-sources-1" --autounmask-write
 etc-update --automode -5
 emerge "=virtual/linux-sources-1"

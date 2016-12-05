@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -e <<'EOF'
 mkdir /usr/portage
 emerge-webrsync
 EOF

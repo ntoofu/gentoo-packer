@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 cd /
 mount /dev/sda1 /mnt/gentoo/boot

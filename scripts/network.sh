@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -e <<'EOF'
 sed -i 's/^#\s*GRUB_CMDLINE_LINUX=.*/GRUB_CMDLINE_LINUX="net.ifnames=0"/' \
   /etc/default/grub
 grub2-mkconfig -o /boot/grub/grub.cfg

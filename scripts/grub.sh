@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -e <<'EOF'
 emerge ">=sys-boot/grub-2.0"
 echo "set timeout=0" >> /etc/grub.d/40_custom
 grub2-install /dev/sda

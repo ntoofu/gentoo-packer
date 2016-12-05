@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 tarball=stage3-amd64-nomultilib-$STAGE3.tar.bz2
 

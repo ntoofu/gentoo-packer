@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/bash -e
 
-chroot /mnt/gentoo /bin/bash <<'EOF'
+chroot /mnt/gentoo /bin/bash -e <<'EOF'
 cd /usr/src/linux && make clean
 emerge -C sys-kernel/gentoo-sources
 emerge --depclean
