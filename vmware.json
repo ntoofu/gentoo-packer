@@ -25,7 +25,7 @@
         "<wait>"
       ],
       "boot_wait": "5s",
-      "disk_size": 60000,
+      "disk_size": 40000,
       "guest_os_type": "linux",
       "headless": true,
       "iso_checksum_type": "sha512",
@@ -46,7 +46,7 @@
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "numvcpus": "2",
-        "memsize": "1024",
+        "memsize": "2048",
         "ethernet0.networkName": "{{user `vm_network`}}"
       }
     }
