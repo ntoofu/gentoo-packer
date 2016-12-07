@@ -1,6 +1,6 @@
-#!/bin/bash -e
+#!/bin/bash -xe
 
-chroot /mnt/gentoo /bin/bash -e <<'EOF'
+chroot /mnt/gentoo /bin/bash -xe <<'EOF'
 echo '# Add by Packer for systemd support' >> /etc/default/grub
 echo 'GRUB_CMDLINE_LINUX="init=/usr/lib/systemd/systemd net.ifnames=0 loglevel=3"' >> /etc/default/grub
 grub2-mkconfig -o /boot/grub/grub.cfg

@@ -1,8 +1,8 @@
-#!/bin/bash -e
+#!/bin/bash -xe
 
 cp $SCRIPTS/scripts/kernel.config /mnt/gentoo/tmp/
 
-chroot /mnt/gentoo /bin/bash -e <<'EOF'
+chroot /mnt/gentoo /bin/bash -xe <<'EOF'
 emerge sys-kernel/gentoo-sources
 emerge sys-kernel/genkernel
 cd /usr/src/linux

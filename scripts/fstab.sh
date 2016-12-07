@@ -1,6 +1,6 @@
-#!/bin/bash -e
+#!/bin/bash -xe
 
-chroot /mnt/gentoo /bin/bash -e <<'EOF'
+chroot /mnt/gentoo /bin/bash -xe <<'EOF'
 cat > /etc/fstab <<'DATA'
 # <fs>		<mount>	<type>	<opts>		<dump/pass>
 /dev/sda1	/boot	ext2	noauto,noatime	1 2
