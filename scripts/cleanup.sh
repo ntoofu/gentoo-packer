@@ -23,5 +23,5 @@ mount -o remount,ro /mnt/gentoo
 ./zerofree /dev/sda4
 
 swapoff /dev/sda3
-dd if=/dev/zero of=/dev/sda3
+dd if=/dev/zero of=/dev/sda3 || :
 mkswap /dev/sda3
