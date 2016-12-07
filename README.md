@@ -14,7 +14,7 @@ guide, but avoids completing any of the optional steps.
 This is a [Packer](https://packer.io/) template. Install the latest version of
 Packer, then:
 
-    packer build virtualbox.json
+    packer build vmware.json
 
 This will chew for a bit and finally output a Vagrant box file.
 
@@ -25,7 +25,7 @@ If the error about GuestIPHack occurs, execute the following command first:
 
 ## Disk size
 
-The disk is a 60GB sparse disk. You do not need 60GB of free space initially.
+The disk is a 40GB sparse disk. You do not need 40GB of free space initially.
 The disk will grow as disk usage increases.
 
 ## What's installed?
@@ -33,4 +33,4 @@ The disk will grow as disk usage increases.
 
 ## What's configured?
 
-Everything is left as the defaults. The time zone is set to UTC.
+Everything is left as the defaults. The time zone is designated through variables in vmware.json
