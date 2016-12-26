@@ -4,7 +4,6 @@ chroot /mnt/gentoo /bin/bash -xe <<'EOF'
 cd /usr/src/linux && make clean
 EOF
 
-rm -rf /mnt/gentoo/usr/portage
 rm -rf /mnt/gentoo/tmp/*
 rm -rf /mnt/gentoo/var/log/*
 rm -rf /mnt/gentoo/var/tmp/*
