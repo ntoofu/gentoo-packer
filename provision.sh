@@ -26,6 +26,7 @@ for script in \
   grub        \
   $VM_TYPE    \
   network     \
+  ssh         \
   cleanup
 do
   "$SCRIPTS/scripts/$script.sh"
