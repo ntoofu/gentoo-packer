@@ -19,10 +19,10 @@ for script in \
   mounts      \
   resolv.conf \
   portage     \
+  systemd     \
   timezone    \
   fstab       \
   kernel      \
-  systemd     \
   grub        \
   $VM_TYPE    \
   network     \
