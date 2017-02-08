@@ -8,4 +8,5 @@ emerge --unmerge sys-fs/eudev || :
 emerge --deselect sys-fs/udev || :
 emerge --deselect sys-fs/eudev || :
 emerge -vDN @world
+perl-cleaner --all
 EOF
