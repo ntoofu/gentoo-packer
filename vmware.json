@@ -32,6 +32,7 @@
       "iso_checksum_url": "{{user `mirror`}}{{user `iso`}}.DIGESTS",
       "iso_url": "{{user `mirror`}}{{user `iso`}}",
       "keep_registered": true,
+      "vnc_disable_password": true,
       "remote_type": "esx5",
       "remote_host": "{{ user `esxi_hostname` }}",
       "remote_username": "{{ user `esxi_username` }}",
