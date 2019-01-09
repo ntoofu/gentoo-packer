@@ -1,10 +1,10 @@
 #!/bin/bash -xe
 
-tarball=stage3-amd64-nomultilib-$STAGE3.tar.bz2
+tarball=${STAGE3##*/}
 
 mount /dev/sda4 /mnt/gentoo
 
 cd /mnt/gentoo
-wget http://distfiles.gentoo.org/releases/amd64/autobuilds/$STAGE3/$tarball
+wget $STAGE3
 tar xvjpf $tarball
 rm -f $tarball

@@ -2,7 +2,7 @@
 
 if [[ -z $STAGE3 ]]
 then
-  echo "STAGE3 environment variable must be set to a timestamp."
+  echo "STAGE3 environment variable must be set to a stage3 tar ball file URL"
   exit 1
 fi
 

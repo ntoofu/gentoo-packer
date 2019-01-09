@@ -29,8 +29,8 @@
       "guest_os_type": "linux",
       "headless": true,
       "iso_checksum_type": "sha512",
-      "iso_checksum_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso.DIGESTS",
-      "iso_url": "http://distfiles.gentoo.org/releases/amd64/autobuilds/{{user `stage3`}}/install-amd64-minimal-{{user `stage3`}}.iso",
+      "iso_checksum_url": "{{user `mirror`}}{{user `iso`}}.DIGESTS",
+      "iso_url": "{{user `mirror`}}{{user `iso`}}",
       "keep_registered": true,
       "remote_type": "esx5",
       "remote_host": "{{ user `esxi_hostname` }}",
@@ -42,7 +42,7 @@
       "ssh_username": "{{user `username`}}",
       "ssh_wait_timeout": "20s",
       "type": "vmware-iso",
-      "vm_name": "GentooLinux-auto-{{user `stage3`}}",
+      "vm_name": "GentooLinux-auto-{{timestamp}}",
       "vmx_data": {
         "cpuid.coresPerSocket": "1",
         "numvcpus": "2",
@@ -62,7 +62,7 @@
     },
     {
       "environment_vars": [
-        "STAGE3={{user `stage3`}}",
+        "STAGE3={{user `mirror`}}{{user `stage3`}}",
         "VM_TYPE=vmware",
         "SCRIPTS=/tmp",
         "TZ={{user `time_zone`}}",
@@ -76,7 +76,9 @@
   ],
   "variables": {
     "password": "packer",
-    "stage3": "20161201",
+    "mirror": "http://distfiles.gentoo.org/releases/amd64/autobuilds/",
+    "iso": "20190106T214502Z/install-amd64-minimal-20190106T214502Z.iso",
+    "stage3": "20190103/systemd/stage3-amd64-systemd-20190103.tar.bz2",
     "username": "root",
     "esxi_datastore": "datastore1",
     "esxi_hostname": "esxi",
